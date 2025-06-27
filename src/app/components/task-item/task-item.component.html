@@ -1,0 +1,5 @@
+<div class="task-item">
+  <input type="checkbox" [checked]="task.completed" (change)="onToggle.emit(task)" />
+  <span [class.completed]="task.completed">{{ task.title }} - {{ task.priority }}</span>
+  <button (click)="onDelete.emit(task)">Delete</button>
+</div>

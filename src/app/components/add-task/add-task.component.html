@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSubmit()">
+  <input type="text" [(ngModel)]="title" name="title" placeholder="Title" required />
+  <input type="text" [(ngModel)]="description" name="description" placeholder="Description" />
+  <select [(ngModel)]="priority" name="priority">
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+  </select>
+  <button type="submit">Add Task</button>
+</form>

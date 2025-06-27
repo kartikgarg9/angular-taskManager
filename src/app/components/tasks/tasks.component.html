@@ -1,0 +1,5 @@
+<app-add-task (taskCreated)="addTask($event)"></app-add-task>
+<app-progress-tracker [tasks]="tasks"></app-progress-tracker>
+<div *ngFor="let task of tasks">
+  <app-task-item [task]="task" (onToggle)="toggleTask($event)" (onDelete)="deleteTask($event)"></app-task-item>
+</div>
