@@ -12,10 +12,12 @@ import { CommonModule } from '@angular/common';
 })
 export class AddTaskComponent {
   @Output() taskCreated = new EventEmitter<Task>();
+  @Output() filterChanged = new EventEmitter<'All' | 'Completed' | 'Pending'>();
 
   title = '';
   description = '';
   priority: 'low' | 'medium' | 'high' = 'low';
+  filter: 'All' | 'Completed' | 'Pending' = 'All';
 
   onSubmit() {
     if (!this.title.trim()) return;
@@ -33,5 +35,10 @@ export class AddTaskComponent {
     this.title = '';
     this.description = '';
     this.priority = 'low';
+  }
+
+  changeFilter(type: 'All' | 'Completed' | 'Pending') {
+    this.filter = type;
+    this.filterChanged.emit(type);
   }
 }

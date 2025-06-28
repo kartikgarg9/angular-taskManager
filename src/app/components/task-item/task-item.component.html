@@ -1,5 +1,29 @@
-<div class="task-item">
-  <input type="checkbox" [checked]="task.completed" (change)="onToggle.emit(task)" />
-  <span [class.completed]="task.completed">{{ task.title }} - {{ task.priority }}</span>
-  <button (click)="onDelete.emit(task)">Delete</button>
+<div class="p-4 bg-gray-800 rounded-lg shadow flex justify-between items-start border border-gray-600">
+  <div class="space-y-1">
+    <h3 class="text-xl font-bold" [ngClass]="{ 'line-through text-gray-400 italic': task.completed }">
+      {{ task.title }}
+    </h3>
+    <p class="text-gray-400">{{ task.description }}</p>
+    <span class="text-sm font-medium capitalize" [ngClass]="{
+      'text-red-400': task.priority === 'high',
+      'text-yellow-300': task.priority === 'medium',
+      'text-green-400': task.priority === 'low'
+    }">
+      {{ task.priority }} priority
+    </span>
+  </div>
+  <div class="flex flex-col gap-2">
+    <button
+      class="text-sm px-3 py-1 rounded bg-green-500 text-white hover:bg-green-600"
+      (click)="onToggle.emit(task)"
+    >
+      {{ task.completed ? 'Undo' : 'Complete' }}
+    </button>
+    <button
+      class="text-sm px-3 py-1 rounded bg-red-500 text-white hover:bg-red-600"
+      (click)="onDelete.emit(task)"
+    >
+      Delete
+    </button>
+  </div>
 </div>
