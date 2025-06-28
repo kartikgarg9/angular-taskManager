@@ -1,6 +1,6 @@
-<header class="text-center py-8 bg-gradient-to-r from-yellow-400 to-orange-500 shadow-md mb-8 rounded-b-2xl">
-  <h1 class="text-4xl font-extrabold text-white tracking-wide">📜 Task Manager</h1>
-  <p class="text-white mt-2 text-sm">Organize your tasks effectively and boost your productivity</p>
+<header class="text-center py-8 bg-black shadow-md mb-8 rounded-b-2xl">
+  <h1 class="text-4xl font-extrabold text-white tracking-wide"> Task Manager</h1>
+  <p class="text-white mt-2 text-sm">Organize your tasks effectively </p>
 </header>
 
 <div class="max-w-4xl mx-auto px-4">
@@ -9,16 +9,18 @@
     (filterChanged)="setFilter($event)"
   ></app-add-task>
 
-  <section class="mt-6">
-    <app-progress-tracker [tasks]="filteredTasks"></app-progress-tracker>
-  </section>
+ 
 
-  <section class="mt-6 space-y-4">
+  <section class="mt-6 space-y-4 ">
     <app-task-item
       *ngFor="let task of filteredTasks"
       [task]="task"
       (onToggle)="toggleTask($event)"
       (onDelete)="deleteTask($event)"
     ></app-task-item>
+  </section>
+
+   <section class="mt-6">
+    <app-progress-tracker [tasks]="filteredTasks"></app-progress-tracker>
   </section>
 </div>

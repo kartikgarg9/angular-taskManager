@@ -1,59 +1,91 @@
-# AngularTaskManager
+Angular Task Manager
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
+A component-based Task Manager built with **Angular** and styled using **Tailwind CSS**.
 
-## Development server
+## Project Setup
 
-To start a local development server, run:
+### 1. Create Angular Project
+
+If you haven't already created the project:
 
 ```bash
+git clone <https://github.com/kartikgarg9/angular-taskManager.git >
+cd angular-task-manager
+
+
+2. Install Tailwind CSS
+Install Tailwind CSS and necessary plugins using:
+
+npm install tailwindcss @tailwindcss/postcss postcss --force
+
+
+3. Configure PostCSS
+Create a file in the root:
+.postcssrc.json
+
+{
+  "plugins": {
+    "@tailwindcss/postcss": {}
+  }
+}
+
+
+4. Import Tailwind in Global Styles
+In your src/styles.css, add:
+
+@import "tailwindcss";
+
+You can also use:
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+5. Run the Application
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Visit: http://localhost:4200
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Project Structure
+src/
+├── app/
+│   ├── components/
+│   │   ├── add-task/
+│   │   │   ├── add-task.component.ts
+│   │   │   ├── add-task.component.html
+│   │   │   └── add-task.component.css
+│   │   ├── tasks/
+│   │   │   ├── tasks.component.ts
+│   │   │   ├── task-item/
+│   │   └── progress-tracker/
+│   ├── models/
+│   ├── services/
+│   │   └── task.service.ts
+│   └── app.module.ts
+├── styles.css (includes Tailwind imports)
+├── .postcssrc.json
+└── index.html
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Features
 
-```bash
-ng generate --help
-```
+Add and list tasks
 
-## Building
 
-To build the project run:
+Track task completion
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Delete tasks
 
-## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Built with modular Angular components
 
-```bash
-ng test
-```
 
-## Running end-to-end tests
+Styled entirely using Tailwind CSS utility classes
 
-For end-to-end (e2e) testing, run:
 
-```bash
-ng e2e
-```
+Contributors
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Kartik Garg
